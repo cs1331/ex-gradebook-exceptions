@@ -57,8 +57,9 @@ public class GradeBook {
             } catch (NumberFormatException e) {
                 // We catch an unchecked exception so we can "rethrow" a
                 // more informative checked excaption.
-                String msg = "Score not an integer on line " + lineNum
-                    + ", score number " + i;
+                String msg =
+                    String.format("Score %d (%s) not an integer on line %d",
+                                  i, gradeStrings[i], lineNum);
                 throw new ParseException(msg, lineNum);
             }
         }
